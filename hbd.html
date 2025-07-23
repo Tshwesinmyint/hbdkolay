@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>မွေးနေ့ဆုတောင်း!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0d0d0d, #333);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 3.5em;
+      background: linear-gradient(45deg, #ffe600, #ff7700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 8px #ff0000;
+      animation: floatText 2s ease-out;
+    }
+
+    @keyframes floatText {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .cake-wrapper {
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .cake-plate {
+      width: 280px;
+      height: 30px;
+      background: radial-gradient(#999, #444);
+      border-radius: 50%;
+      margin: 0 auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .cake {
+      position: relative;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .layer {
+      border-radius: 15px 15px 0 0;
+      box-shadow: inset 0 -5px 0 rgba(0,0,0,0.2);
+      margin-bottom: 5px;
+      position: relative;
+    }
+
+    .layer.bottom {
+      width: 220px;
+      height: 60px;
+      background: linear-gradient(to bottom, #cc0000, #990000);
+    }
+
+    .layer.middle {
+      width: 160px;
+      height: 50px;
+      background: linear-gradient(to bottom, #e60000, #b30000);
+    }
+
+    .layer.top {
+      width: 100px;
+      height: 40px;
+      background: linear-gradient(to bottom, #ff4d4d, #cc0000);
+    }
+
+    .icing {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 15px;
+      background: white;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 3px 0 #ccc;
+    }
+
+    .candle {
+      width: 12px;
+      height: 50px;
+      background: repeating-linear-gradient(
+        45deg,
+        white,
+        white 5px,
+        gold 5px,
+        gold 10px
+      );
+      border-radius: 3px;
+      position: absolute;
+      top: -70px;
+      left: calc(50% - 6px);
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .flame {
+      width: 16px;
+      height: 25px;
+      background: orange;
+      border-radius: 50% 50% 0 0;
+      position: absolute;
+      top: -30px;
+      left: -2px;
+      display: none;
+      animation: flicker 1s infinite ease-in-out;
+      box-shadow: 0 0 15px 5px orange;
+    }
+
+    @keyframes flicker {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+      50% { transform: scale(1.2) rotate(3deg); opacity: 0.7; }
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #ccc;
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Happy Birthday ပါ ကိုလေးရေ 💗</h1>
+
+  <div class="cake-wrapper">
+    <div class="cake">
+      <div class="candle" onclick="lightCandle()">
+        <div class="flame" id="flame"></div>
+      </div>
+
+      <div class="layer top">
+        <div class="icing"></div>
+      </div>
+      <div class="layer middle">
+        <div class="icing"></div>
+      </div>
+      <div class="layer bottom">
+        <div class="icing"></div>
+      </div>
+    </div>
+    <div class="cake-plate"></div>
+  </div>
+
+  <div class="footer">
+    ဖယောင်းတိုင်ထိပ်ကို နှိပ်လိုက်ပါနော် 🕯️<br>
+    မုန့်ဖိုးများများပေးနိုင်ပါစေနော် 🍰💰<br>
+    Wish You All The Best💖
+  </div>
+
+  <audio autoplay>
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function lightCandle() {
+      document.getElementById('flame').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
